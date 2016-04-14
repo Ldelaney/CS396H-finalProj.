@@ -18,12 +18,12 @@
 	echo "<br>";
 	echo "The current time is $arrivaldate[hours]:$arrivaldate[minutes]:$arrivaldate[seconds], $arrivaldate[month], $arrivaldate[mday], $arrivaldate[year]";
 	echo "<br>";
-/*	
-	//send the username, password, and timestamp to the database
-	Server: syllabusscheduler.database.windows.net,1433 
-	SQL Database: Syllabus Database\r\nUser Name: HowToMakeDarn
 	
-	PHP Data Objects(PDO) Sample Code:
+	//send the username, password, and timestamp to the database
+	//Server: syllabusscheduler.database.windows.net,1433 
+	//SQL Database: Syllabus Database\r\nUser Name: HowToMakeDarn
+	
+	//PHP Data Objects(PDO) Sample Code:
 	
 	try {
 		$conn = new PDO ( \"sqlsrv:server = tcp:syllabusscheduler.database.windows.net,1433; Database = Syllabus Database\", \"HowToMakeDarn\", \"{-NearAnything1@}\");
@@ -43,7 +43,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 echo "Connected successfully";
-*/	
+	
+
+/*
 	//w3schools example of how to connect
 $servername = "syllabusscheduler.database.windows.net,1433";
 $username = "HowToMakeDarn";
@@ -59,7 +61,7 @@ if (!$conn) {
 }
 
 echo "Connected successfully";	
-	
+*/
 	
 ?>
 </body>
