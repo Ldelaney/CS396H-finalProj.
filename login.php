@@ -9,7 +9,7 @@
 	$arrivaldate = getdate($arrivaltime);
 	
 	//echo the variables, confirm they were passed correctly
-	//ini_set('display_errors', 1);
+	ini_set('display_errors', 1);
 	echo "your name is: ";
 	echo $username; 
 	echo "<br>";
