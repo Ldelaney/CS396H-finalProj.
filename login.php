@@ -21,7 +21,7 @@
 	
 
 	
-	//connect to the databse
+	//connect to the database
 try {
    $conn = new PDO ( "sqlsrv:server = tcp:syllabusscheduler.database.windows.net,1433; Database = Syllabus Database", "HowToMakeDarn", "-NearAnything1@");
        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -30,6 +30,14 @@ catch ( PDOException $e ) {
    		print( "Error connecting to SQL Server." );
     	die(print_r($e));
 	}
+	
+	//code right below this modified from w3schools
+	$sql = "INSERT INTO Users (username, password, userArrivalTime) 
+	VALUES ($userusername, $userpassword, $arrivalTime)"; //FIXME: arrivaltime may have a format mismatch -- seconds since UNIX epoc vs mySQL datetime
+    // use exec() because no results are returned
+    $conn->exec($sql);
+    echo "New record created successfully";
+	
 ?>
 </body>
 </html>
