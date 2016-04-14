@@ -17,7 +17,7 @@
 	echo $userpassword; 
 	echo "<br>";
 	echo "The current time is $arrivaldate[hours]:$arrivaldate[minutes]:$arrivaldate[seconds], $arrivaldate[month], $arrivaldate[mday], $arrivaldate[year]";
-	echo "<br>"
+	echo "<br>";
 /*	
 	//send the username, password, and timestamp to the database
 	Server: syllabusscheduler.database.windows.net,1433 
