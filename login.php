@@ -4,7 +4,7 @@
 <?php
 	//set the variables
  	$userusername =  $_POST["name"];
- 	$userpassword = $_POST["password"];
+ 	$userpassword = $_POST["userpassword"];
 	$arrivaltime = time();
 	$arrivaldate = getdate($arrivaltime);
 	
