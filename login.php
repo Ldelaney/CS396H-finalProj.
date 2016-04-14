@@ -21,24 +21,16 @@
 	
 
 	
-	
-	//w3schools example of how to connect
-$servername = "tcp:syllabusscheduler.database.windows.net,1433";
-$username = "HowToMakeDarn";
-$password = "-NearAnything1@";
-
-// Create connection
-
+	//connect to the databse
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully"; 
-    }
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
+   $conn = new PDO ( \"sqlsrv:server = tcp:syllabusscheduler.database.windows.net,1433; Database = Syllabus Database\", \"HowToMakeDarn\", \"{your_password_here}\");
+       $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+       }
+       catch ( PDOException $e ) {
+          print( \"Error connecting to SQL Server.\" );
+             die(print_r($e));
+        }
+
 
 	
 ?>
