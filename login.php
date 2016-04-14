@@ -23,13 +23,14 @@
 	
 	//connect to the databse
 try {
-   $conn = new PDO ( \"sqlsrv:server = tcp:syllabusscheduler.database.windows.net,1433; Database = Syllabus Database\", \"HowToMakeDarn\", \"{your_password_here}\");
+   $conn = new PDO ( "sqlsrv:server = tcp:syllabusscheduler.database.windows.net,1433; Database = Syllabus Database", "HowToMakeDarn", "-NearAnything1@");
        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-       }
-       catch ( PDOException $e ) {
-          print( \"Error connecting to SQL Server.\" );
-             die(print_r($e));
-        }
+    }
+catch ( PDOException $e ) {
+   		print( "Error connecting to SQL Server." );
+    	die(print_r($e));
+	}
+
 
 
 	
