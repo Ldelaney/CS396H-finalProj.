@@ -31,7 +31,7 @@ catch ( PDOException $e ) {
     	die(print_r($e));
 	}
 	
-	//code right below this modified from w3schools
+	//code right below this modified from w3schools (http://www.w3schools.com/php/php_mysql_insert.asp)
 	$sql = "INSERT INTO Users (username, password, userArrivalTime) 
 	VALUES ($userusername, $userpassword, $arrivalTime)"; //FIXME: arrivaltime may have a format mismatch -- seconds since UNIX epoc vs mySQL datetime
     // use exec() because no results are returned
