@@ -3,18 +3,18 @@
 <body>
 <?php
 	//set the variables
- 	$username =  $_POST["name"];
- 	$password = $_POST["password"];
+ 	$userusername =  $_POST["name"];
+ 	$userpassword = $_POST["password"];
 	$arrivaltime = time();
 	$arrivaldate = getdate($arrivaltime);
 	
 	//echo the variables, confirm they were passed correctly
 	ini_set('display_errors', 1);
 	echo "your name is: ";
-	echo $username; 
+	echo $userusername; 
 	echo "<br>";
 	echo "Your password is: ";
-	echo $password; 
+	echo $userpassword; 
 	echo "<br>";
 	echo "The current time is $arrivaldate[hours]:$arrivaldate[minutes]:$arrivaldate[seconds], $arrivaldate[month], $arrivaldate[mday], $arrivaldate[year]";
 	echo "<br>"
@@ -45,7 +45,7 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 */	
 	//w3schools example of how to connect
-$servername = "syllabusscheduler.database.windows.net";//,1433";
+$servername = "syllabusscheduler.database.windows.net,1433";
 $username = "HowToMakeDarn";
 $password = "-NearAnything1@";
 
@@ -56,6 +56,7 @@ $conn = mysqli_connect($servername, $username, $password);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+
 echo "Connected successfully";	
 	
 	
