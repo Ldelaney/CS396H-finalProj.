@@ -92,6 +92,9 @@ catch ( PDOException $e ) {
 
 		//FIXME: Do stuff here
 	}
+	else{
+		//user already exists -- are really also okay with redirecting to the index / upload page
+	}
 ?>
 </body>
 </html>
