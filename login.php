@@ -7,8 +7,8 @@
  	$userpassword = $_POST["userpassword"];
 	$arrivalTime = time();
 	$arrivaldate = getdate($arrivalTime);
-	bool newUserCreated = false;
-	bool inDebug = true;
+	$newUserCreated = false;
+	$inDebug = true;
 	//echo the variables, confirm they were passed correctly
 	ini_set('display_errors', 1);
 	echo "your name is: ";
@@ -27,10 +27,10 @@ try {
        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
 catch ( PDOException $e ) {
-   		//if ($inDebug){
+   		if ($inDebug){
    			print( "Error connecting to SQL Server." );
     		die(print_r($e));
-    	//}
+    	}
 	}
 	
 	//Prepare an SQL instruction to be executed, in this case, an insertion
