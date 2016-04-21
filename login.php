@@ -88,7 +88,7 @@ catch ( PDOException $e ) {
 
 	if ($wasError == false)
 	{
-		header("Location: http://syllabusscheduler.azurewebsites.net/index.html");
+		header("Location: http://syllabusscheduler.azurewebsites.net/Upload.html");
 
 		//FIXME: Do stuff here
 	}
