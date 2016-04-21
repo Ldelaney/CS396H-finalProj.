@@ -27,10 +27,10 @@ try {
        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
 catch ( PDOException $e ) {
-   		if (inDebug){
+   		if ($inDebug){
    			print( "Error connecting to SQL Server." );
-    			die(print_r($e));
-    		}
+    		die(print_r($e));
+    	}
 	}
 	
 	//Prepare an SQL instruction to be executed, in this case, an insertion
@@ -39,8 +39,8 @@ catch ( PDOException $e ) {
 	$stmt->bindParam(':user', $userusername);
 	$stmt->bindParam(':pass', $userpassword); 
 	$stmt->bindParam(':timeInt', $arrivalTime);
-	newUserCreated = $stmt->execute();
-	if (newUserCreated){
+	$newUserCreated = $stmt->execute();
+	if ($newUserCreated){
 		echo "Welcome " . $userusername;
 	}
 	else{
