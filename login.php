@@ -45,21 +45,22 @@ catch ( PDOException $e ) {
 	}
 	catch ( PDOException $e ) {
 		if ($inDebug){
-   			print( "Error inserting to SQL Server." );
+   			print( "Error inserting to SQL Server." . "<br>" );
     		print_r($e);
+
     		//die(print_r($e));
     	}
     }
 	if ($stmtFlag){
 		$newUserCreated = true;
-		echo "Welcome " . $userusername;
+		echo "<br>Welcome " . $userusername;
 	}
 	else{
 		//user already exists, because user/pass are a joint primary key
 		//options: either overwrite that user's stuff (making a new calendar for them), or tell them to pick a new username
 		//decision: have the user pick a calendar name, and create a new calendar for that user
 			//this happens regardless, so our else statment doesn't matter
-		echo "Welcome " . $userusername . "!";
+		echo "<br>Welcome " . $userusername . "!";
 	}
 ?>
 </body>
