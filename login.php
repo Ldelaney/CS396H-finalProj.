@@ -40,7 +40,7 @@ catch ( PDOException $e ) {
 	$stmt->bindParam(':pass', $userpassword); 
 	$stmt->bindParam(':timeInt', $arrivalTime);
 	$stmtFlag = $stmt->execute();
-	/*if (){
+	if ($stmtFlag){
 		$newUserCreated = true;
 		echo "Welcome " . $userusername;
 	}
@@ -51,7 +51,6 @@ catch ( PDOException $e ) {
 			//this happens regardless, so our else statment doesn't matter
 		echo "Welcome " . $userusername . "!";
 	}
-	*/
 ?>
 </body>
 </html>
