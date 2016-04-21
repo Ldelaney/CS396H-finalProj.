@@ -1,3 +1,4 @@
+
 <?php
 // Start the user session
 //for REFERENCE go here: http://www.w3schools.com/php/php_sessions.asp
@@ -8,6 +9,7 @@ session_start();
 <html>
 <body>
 <?php
+			//FIXME: choose echo or print and just use one output method
 	//set the variables
  	$userusername =  $_POST["name"];
  	$userpassword = $_POST["userpassword"];
@@ -18,8 +20,8 @@ session_start();
 	$wasError  false;
 
 	//set session variables
-	$_SESSION["favcolor"] = $userusername;
-	$_SESSION["favanimal"] = $userpassword;
+	//$_SESSION["favcolor"] = $userusername;
+	//$_SESSION["favanimal"] = $userpassword;
 	if ($inDebug){
 		echo "Session variables are set <br>";
 		//echo the variables, confirm they were passed correctly
@@ -69,7 +71,7 @@ catch ( PDOException $e ) {
     }
 	if ($stmtFlag){
 		$newUserCreated = true;
-		echo "<br>Welcome " . $userusername;
+		echo "<br>" . "Welcome " . $userusername;
 	}
 	else{
 		//user already exists, because user/pass are a joint primary key
@@ -84,7 +86,7 @@ catch ( PDOException $e ) {
 
 	if ($wasError == false)
 	{
-
+		echo "No errors! Yay!" . "<br>";
 	}
 ?>
 </body>
