@@ -29,8 +29,8 @@ try {
 catch ( PDOException $e ) {
    		if (inDebug){
    			print( "Error connecting to SQL Server." );
-    		die(print_r($e));
-    	}
+    			die(print_r($e));
+    		}
 	}
 	
 	//Prepare an SQL instruction to be executed, in this case, an insertion
@@ -48,8 +48,8 @@ catch ( PDOException $e ) {
 		//options: either overwrite that user's stuff (making a new calendar for them), or tell them to pick a new username
 		//decision: have the user pick a calendar name, and create a new calendar for that user
 			//this happens regardless, so our else statment doesn't matter
+		echo "Welcome " . $userusername . "!";
 	}
-	
 ?>
 </body>
 </html>
