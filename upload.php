@@ -2,7 +2,6 @@
 <html>
 <body>
 
-<h1>My first PHP page</h1>
 
 
 <?php
@@ -36,6 +35,15 @@ if ($uploadOk == 0) {
 } else { 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+
+        if ($_POST["googlecal"]){
+            $_SESSION["googlecal"] = $_POST["googlecal"]; //will be a string of "true" if set
+            echo "Will make a google calendar" . "<br>";
+        }
+        if ($_POST["printcal"]){
+            $_SESSION["printcal"] = $_POST["printcal"];
+            echo "Will make a printable calendar" . "<br>";
+        }
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
