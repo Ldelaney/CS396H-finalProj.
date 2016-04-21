@@ -5,8 +5,8 @@
 	//set the variables
  	$userusername =  $_POST["name"];
  	$userpassword = $_POST["userpassword"];
-	$arrivaltime = time();
-	$arrivaldate = getdate($arrivaltime);
+	$arrivalTime = time();
+	$arrivaldate = getdate($arrivalTime);
 	
 	//echo the variables, confirm they were passed correctly
 	ini_set('display_errors', 1);
@@ -32,8 +32,7 @@ catch ( PDOException $e ) {
 	}
 	
 	//code right below this modified from w3schools (http://www.w3schools.com/php/php_mysql_insert.asp)
-	$sql = "INSERT INTO Users (username, password, userArrivalTime) 
-	VALUES ($userusername, $userpassword, $arrivalTime)"; //FIXME: arrivaltime may have a format mismatch -- seconds since UNIX epoc vs mySQL datetime
+	$sql = "INSERT INTO Users (username, password, userArrivalTime) VALUES ($userusername, $userpassword, $arrivalTime)"; //FIXME: arrivaltime may have a format mismatch -- seconds since UNIX epoc vs mySQL datetime
     // use exec() because no results are returned
     $conn->exec($sql);
     echo "New record created successfully";
