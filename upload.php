@@ -34,7 +34,7 @@ if ($uploadOk == 0) {
 // if everything is still ok, try to upload file
 } else { 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded."."<br>";
         $choseACalendar = false;
         if ($_POST["googlecal"]){
             $_SESSION["googlecal"] = $_POST["googlecal"]; //will be a string of "true" if set
