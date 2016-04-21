@@ -1,3 +1,9 @@
+<?php
+// Start the user session
+//for REFERENCE go here: http://www.w3schools.com/php/php_sessions.asp
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -9,16 +15,24 @@
 	$arrivaldate = getdate($arrivalTime);
 	$newUserCreated = false;
 	$inDebug = true;
-	//echo the variables, confirm they were passed correctly
-	ini_set('display_errors', 1);
-	echo "your name is: ";
-	echo $userusername; 
-	echo "<br>";
-	echo "Your password is: ";
-	echo $userpassword; 
-	echo "<br>";
-	echo "The current time is $arrivaldate[hours]:$arrivaldate[minutes]:$arrivaldate[seconds], $arrivaldate[month], $arrivaldate[mday], $arrivaldate[year]";
-	echo "<br>";
+	$wasError  false;
+
+	//set session variables
+	$_SESSION["favcolor"] = $userusername;
+	$_SESSION["favanimal"] = $userpassword;
+	if ($inDebug){
+		echo "Session variables are set <br>";
+		//echo the variables, confirm they were passed correctly
+		ini_set('display_errors', 1);
+		echo "your name is: ";
+		echo $userusername; 
+		echo "<br>";
+		echo "Your password is: ";
+		echo $userpassword; 
+		echo "<br>";
+		echo "The current time is $arrivaldate[hours]:$arrivaldate[minutes]:$arrivaldate[seconds], $arrivaldate[month], $arrivaldate[mday], $	arrivaldate[year]";
+		echo "<br>";
+	}	
 	
 	
 	//connect to the database
@@ -27,6 +41,7 @@ try {
        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
 catch ( PDOException $e ) {
+		$wasError = true;
    		if ($inDebug){
    			print( "Error connecting to SQL Server." );
     		print_r($e);
@@ -44,6 +59,7 @@ catch ( PDOException $e ) {
 		$stmtFlag = $stmt->execute();
 	}
 	catch ( PDOException $e ) {
+		$wasError = true;
 		if ($inDebug){
    			print( "Error inserting to SQL Server." . "<br>" );
     		print_r($e);
@@ -60,7 +76,15 @@ catch ( PDOException $e ) {
 		//options: either overwrite that user's stuff (making a new calendar for them), or tell them to pick a new username
 		//decision: have the user pick a calendar name, and create a new calendar for that user
 			//this happens regardless, so our else statment doesn't matter
-		echo "<br>Welcome " . $userusername . "!";
+		
+		//FIXME: do this echo logic on another page
+		//echo "<br>Welcome " . $userusername . "!";
+	}
+
+
+	if ($wasError == false)
+	{
+
 	}
 ?>
 </body>
