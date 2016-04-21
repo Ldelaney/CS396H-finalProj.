@@ -39,8 +39,9 @@ catch ( PDOException $e ) {
 	$stmt->bindParam(':user', $userusername);
 	$stmt->bindParam(':pass', $userpassword); 
 	$stmt->bindParam(':timeInt', $arrivalTime);
-	$newUserCreated = $stmt->execute();
-	if ($newUserCreated){
+
+	if ($stmt->execute()){
+		$newUserCreated = true;
 		echo "Welcome " . $userusername;
 	}
 	else{
