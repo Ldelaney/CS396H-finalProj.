@@ -29,7 +29,8 @@ try {
 catch ( PDOException $e ) {
    		if ($inDebug){
    			print( "Error connecting to SQL Server." );
-    		die(print_r($e));
+    		print_r($e);
+    		//die(print_r($e));
     	}
 	}
 	
@@ -39,7 +40,16 @@ catch ( PDOException $e ) {
 	$stmt->bindParam(':user', $userusername);
 	$stmt->bindParam(':pass', $userpassword); 
 	$stmt->bindParam(':timeInt', $arrivalTime);
-	$stmtFlag = $stmt->execute();
+	try{
+		$stmtFlag = $stmt->execute();
+	}
+	catch ( PDOException $e ) {
+		if ($inDebug){
+   			print( "Error inserting to SQL Server." );
+    		print_r($e);
+    		//die(print_r($e));
+    	}
+    }
 	if ($stmtFlag){
 		$newUserCreated = true;
 		echo "Welcome " . $userusername;
