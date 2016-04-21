@@ -34,8 +34,8 @@ catch ( PDOException $e ) {
 	$stmt = $conn->prepare("INSERT INTO Users (username, password, userArrivalTimeInt) VALUES (:user, :pass, :timeInt)");
 	//bind parameters to the statement (this way of doing things protects better against SQL injection attacks than building a string)
 	$stmt->bindParam(':user', $userusername);
-	$stmt->bindParam(':pass ', $userpassword); 
-	$stmt->bindParam(':timeInt ', $arrivalTime);
+	$stmt->bindParam(':pass', $userpassword); 
+	$stmt->bindParam(':timeInt', $arrivalTime);
 	$stmt->execute();
 	echo "New record created successfully";
 	/*
