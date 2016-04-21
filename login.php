@@ -7,7 +7,8 @@
  	$userpassword = $_POST["userpassword"];
 	$arrivalTime = time();
 	$arrivaldate = getdate($arrivalTime);
-	
+	bool newUserCreated = false;
+	bool inDebug = true;
 	//echo the variables, confirm they were passed correctly
 	ini_set('display_errors', 1);
 	echo "your name is: ";
@@ -26,8 +27,10 @@ try {
        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
 catch ( PDOException $e ) {
-   		print( "Error connecting to SQL Server." );
-    	die(print_r($e));
+   		if (inDebug){
+   			print( "Error connecting to SQL Server." );
+    		die(print_r($e));
+    	}
 	}
 	
 	//Prepare an SQL instruction to be executed, in this case, an insertion
@@ -36,16 +39,16 @@ catch ( PDOException $e ) {
 	$stmt->bindParam(':user', $userusername);
 	$stmt->bindParam(':pass', $userpassword); 
 	$stmt->bindParam(':timeInt', $arrivalTime);
-	$stmt->execute();
-	echo "New record created successfully";
-	/*
-	//code right below this modified from w3schools (http://www.w3schools.com/php/php_mysql_insert.asp)
-	$sql = "INSERT INTO Users (username, password, userArrivalTime) 
-	VALUES ($userusername, $userpassword, $arrivalTime)"; //FIXME: arrivaltime may have a format mismatch -- seconds since UNIX epoc vs mySQL datetime
-    // use exec() because no results are returned
-    $conn->exec($sql);
-    echo "New record created successfully";
-    */
+	newUserCreated = $stmt->execute();
+	if (newUserCreated){
+		echo "Welcome " . $userusername;
+	}
+	else{
+		//user already exists, because user/pass are a joint primary key
+		//options: either overwrite that user's stuff (making a new calendar for them), or tell them to pick a new username
+		//decision: have the user pick a calendar name, and create a new calendar for that user
+			//this happens regardless, so our else statment doesn't matter
+	}
 	
 ?>
 </body>
