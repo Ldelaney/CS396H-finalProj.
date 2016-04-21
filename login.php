@@ -16,7 +16,7 @@
 	$arrivalTime = time();
 	$arrivaldate = getdate($arrivalTime);
 	$newUserCreated = false;
-	$inDebug = true;
+	$inDebug = false;//true;
 	$wasError = false;
 
 	//set session variables
@@ -32,7 +32,7 @@
 		echo "Your password is: ";
 		echo $userpassword; 
 		echo "<br>";
-		echo "The current time is $arrivaldate[hours]:$arrivaldate[minutes]:$arrivaldate[seconds], $arrivaldate[month], $arrivaldate[mday], $	arrivaldate[year]";
+		echo "The current time is $arrivaldate[hours]:$arrivaldate[minutes]:$arrivaldate[seconds], $arrivaldate[month], $arrivaldate[mday], $arrivaldate[year]";
 		echo "<br>";
 	}	
 	
@@ -71,7 +71,9 @@ catch ( PDOException $e ) {
     }
 	if ($stmtFlag){
 		$newUserCreated = true;
-		echo "<br>" . "Welcome " . $userusername;
+
+		//FIXME: only echo on another page
+		//echo "<br>" . "Welcome " . $userusername;
 	}
 	else{
 		//user already exists, because user/pass are a joint primary key
@@ -86,7 +88,9 @@ catch ( PDOException $e ) {
 
 	if ($wasError == false)
 	{
-		echo "No errors! Yay!" . "<br>";
+		header("Location: http://syllabusscheduler.azurewebsites.net/index.html");
+
+		//FIXME: Do stuff here
 	}
 ?>
 </body>
