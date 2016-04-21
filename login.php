@@ -2,7 +2,7 @@
 <?php
 // Start the user session
 //for REFERENCE go here: http://www.w3schools.com/php/php_sessions.asp
-session_start();
+	session_start();
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ session_start();
 	$arrivaldate = getdate($arrivalTime);
 	$newUserCreated = false;
 	$inDebug = true;
-	$wasError  false;
+	$wasError = false;
 
 	//set session variables
 	//$_SESSION["favcolor"] = $userusername;
