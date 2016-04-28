@@ -52,7 +52,7 @@ if ($uploadOk == 0) {
             $_SESSION["printcal"] = $_POST["printcal"];
             $choseACalendar = true; //uneeded
         }
-        header("Location: http://syllabusscheduler.azurewebsites.net/results.html");
+        header("Location: http://syllabusscheduler.azurewebsites.net/results.php");
     } 
     else {
         echo "Sorry, there was an error uploading your file.";
