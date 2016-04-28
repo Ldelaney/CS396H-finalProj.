@@ -19,9 +19,6 @@
 	$inDebug = false;//true;
 	$wasError = false;
 
-	//set session variables
-	//$_SESSION["favcolor"] = $userusername;
-	//$_SESSION["favanimal"] = $userpassword;
 	if ($inDebug){
 		echo "Session variables are set <br>";
 		//echo the variables, confirm they were passed correctly
@@ -85,12 +82,14 @@ catch ( PDOException $e ) {
 		//echo "<br>Welcome " . $userusername . "!";
 	}
 
-
 	if ($wasError == false)
 	{
+	//set session variables
+	$_SESSION["user"] = $userusername;
+	$_SESSION["password"] = $userpassword;
 		header("Location: http://syllabusscheduler.azurewebsites.net/Upload.html");
 
-		//FIXME: Do stuff here
+		//FIXME: Do stuff above here
 	}
 	else{
 		//user already exists -- are really also okay with redirecting to the index / upload page
