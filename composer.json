@@ -1,11 +1,4 @@
 {
-    "repositories": [
-    {
-		"type": "composer",
-		"url": "https://packages.zendframework.com/"
-	}
-	],
-	
 	"require": {
        "phpoffice/phpword": "v0.13.*"
     }
