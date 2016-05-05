@@ -62,3 +62,5 @@ echo write($phpWord, basename(__FILE__, '.php'), $writers);
 if (!CLI) {
     include_once 'Sample_Footer.php';
 }
+
+?>
