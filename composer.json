@@ -1,0 +1,11 @@
+{
+    "require": {
+       "phpoffice/phpword": "v0.13.*"
+    }
+    "repositories": [
+    {
+        "type": "composer",
+        "url": "https://packages.zendframework.com/"
+    }
+],
+}
