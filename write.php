@@ -1,76 +1,64 @@
 <?php
-require_once 'src/PhpWord/Autoloader.php';
-\PhpOffice\PhpWord\Autoloader::register();
-
-// Creating the new document...
+include_once 'Sample_Header.php';
+// New Word Document
+echo date('H:i:s') , ' Create new PhpWord object' , EOL;
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
-
-/* Note: any element you append to a document must reside inside of a Section. */
-
-// Adding an empty Section to the document...
+$phpWord->addFontStyle('rStyle', array('bold' => true, 'italic' => true, 'size' => 16, 'allCaps' => true, 'doubleStrikethrough' => true));
+$phpWord->addParagraphStyle('pStyle', array('align' => 'center', 'spaceAfter' => 100));
+$phpWord->addTitleStyle(1, array('bold' => true), array('spaceAfter' => 240));
+// New portrait section
 $section = $phpWord->addSection();
-// Adding Text element to the Section having font styled by default...
-$section->addText(
-    htmlspecialchars(
-        '"Learn from yesterday, live for today, hope for tomorrow. '
-            . 'The important thing is not to stop questioning." '
-            . '(Albert Einstein)'
-    )
-);
-
-/*
- * Note: it's possible to customize font style of the Text element you add in three ways:
- * - inline;
- * - using named font style (new font style object will be implicitly created);
- * - using explicitly created font style object.
- */
-
-// Adding Text element with font customized inline...
-$section->addText(
-    htmlspecialchars(
-        '"Great achievement is usually born of great sacrifice, '
-            . 'and is never the result of selfishness." '
-            . '(Napoleon Hill)'
-    ),
-    array('name' => 'Tahoma', 'size' => 10)
-);
-
-// Adding Text element with font customized using named font style...
-$fontStyleName = 'oneUserDefinedStyle';
-$phpWord->addFontStyle(
-    $fontStyleName,
-    array('name' => 'Tahoma', 'size' => 10, 'color' => '1B2232', 'bold' => true)
-);
-$section->addText(
-    htmlspecialchars(
-        '"The greatest accomplishment is not in never falling, '
-            . 'but in rising again after you fall." '
-            . '(Vince Lombardi)'
-    ),
-    $fontStyleName
-);
-
-// Adding Text element with font customized using explicitly created font style object...
-$fontStyle = new \PhpOffice\PhpWord\Style\Font();
-$fontStyle->setBold(true);
-$fontStyle->setName('Tahoma');
-$fontStyle->setSize(13);
-$myTextElement = $section->addText(
-    htmlspecialchars('"Believe you can and you\'re halfway there." (Theodor Roosevelt)')
-);
-$myTextElement->setFontStyle($fontStyle);
-
-// Saving the document as OOXML file...
-$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-$objWriter->save('helloWorld.docx');
-
-// Saving the document as ODF file...
-$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'ODText');
-$objWriter->save('helloWorld.odt');
-
-// Saving the document as HTML file...
-$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'HTML');
-$objWriter->save('helloWorld.html');
-
-/* Note: we skip RTF, because it's not XML-based and requires a different example. */
-/* Note: we skip PDF, because "HTML-to-PDF" approach is used to create PDF documents. */
+// Simple text
+$section->addTitle(htmlspecialchars('Welcome to PhpWord'), 1);
+$section->addText(htmlspecialchars('Hello World!'));
+// Two text break
+$section->addTextBreak(2);
+// Defined style
+$section->addText(htmlspecialchars('I am styled by a font style definition.'), 'rStyle');
+$section->addText(htmlspecialchars('I am styled by a paragraph style definition.'), null, 'pStyle');
+$section->addText(htmlspecialchars('I am styled by both font and paragraph style.'), 'rStyle', 'pStyle');
+$section->addTextBreak();
+// Inline font style
+$fontStyle['name'] = 'Times New Roman';
+$fontStyle['size'] = 20;
+$textrun = $section->addTextRun();
+$textrun->addText(htmlspecialchars('I am inline styled '), $fontStyle);
+$textrun->addText(htmlspecialchars('with '));
+$textrun->addText(htmlspecialchars('color'), array('color' => '996699'));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('bold'), array('bold' => true));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('italic'), array('italic' => true));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('underline'), array('underline' => 'dash'));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('strikethrough'), array('strikethrough' => true));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('doubleStrikethrough'), array('doubleStrikethrough' => true));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('superScript'), array('superScript' => true));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('subScript'), array('subScript' => true));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('smallCaps'), array('smallCaps' => true));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('allCaps'), array('allCaps' => true));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('fgColor'), array('fgColor' => 'yellow'));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('scale'), array('scale' => 200));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('spacing'), array('spacing' => 120));
+$textrun->addText(htmlspecialchars(', '));
+$textrun->addText(htmlspecialchars('kerning'), array('kerning' => 10));
+$textrun->addText(htmlspecialchars('. '));
+// Link
+$section->addLink('http://www.google.com', htmlspecialchars('Google'));
+$section->addTextBreak();
+// Image
+$section->addImage('resources/_earth.jpg', array('width'=>18, 'height'=>18));
+// Save file
+echo write($phpWord, basename(__FILE__, '.php'), $writers);
+if (!CLI) {
+    include_once 'Sample_Footer.php';
+}
