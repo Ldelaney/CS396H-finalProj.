@@ -21,7 +21,7 @@ $section->addText(
 
 // Saving the document as OOXML file...
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-$objWriter->save('helloWorld.docx');
+$objWriter->save('/uploads/helloWorld.docx');
     
     
     
