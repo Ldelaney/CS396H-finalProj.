@@ -56,9 +56,12 @@
   echo 'finished reading<br>';
   //echo write($phpWord, basename(__FILE__, '.php'), $writers);
   $resultSections = $phpWord->getSections();
-  $fontName = $phpWord->getDefaultFontName();
-  echo 'font name is ' . $fontName;
-  echo 'hello world';
+  $resultDocInfo = $phpWord->getDocInfo();
+  echo $resultDocInfo->getTitle();
+  //$fontName = $phpWord->getDefaultFontName();
+  //echo 'font name is ' . $fontName;
+  $section = $resultSections[0];
+  
 ?>
 </body>
 </html>
