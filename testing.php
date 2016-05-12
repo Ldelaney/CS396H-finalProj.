@@ -73,6 +73,7 @@
  	}
  }
  echo 'count is' . $count . '<br>';
+ echo 'count2 is ' . $count2 . '<br>';
  
 ?>
 </body>
