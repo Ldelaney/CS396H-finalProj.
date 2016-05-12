@@ -40,7 +40,7 @@
   $source = __DIR__ . '/uploads/HW5.docx';
  
  echo 'now reading contents from ' . $source;
-  //$phpWord = \PhpOffice\PhpWord\IOFactory:::load($source);
+  $phpWord = \PhpOffice\PhpWord\IOFactory::load($source);
 	//this should read things?
 	//the library has OK documentation and examples, but I am still confused
 
