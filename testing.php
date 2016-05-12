@@ -58,7 +58,7 @@
   echo write($phpWord, basename(__FILE__, '.php'), $writers);
   $resultSections = $phpWord->getSections();
   $fontName = $phpWord->getDefaultFontName();
-  echo $fontName;
+  echo 'font name is ' . $fontName;
 
 ?>
 </body>
