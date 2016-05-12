@@ -48,26 +48,20 @@
   
   //set the name of where we are, and the name of the source file
   $source = __DIR__ . '\uploads\HW5.docx';
-   echo 'now reading contents from ' . $source;
-  $phpWord = \PhpOffice\PhpWord\IOFactory::load($source);
-	//this should read things?
-	//the library has OK documentation and examples, but I am still confused
+  echo 'now reading contents from ' . $source;
+  $phpWord = \PhpOffice\PhpWord\IOFactory::load($source); //should load the file into a phpWord object
+
   // Save file
-  echo 'finished reading<br>';
-  //echo write($phpWord, basename(__FILE__, '.php'), $writers);
-  $resultSections = $phpWord->getSections();
+ echo 'finished reading<br>';
+ $resultSections = $phpWord->getSections();
  $resultDocInfo = $phpWord->getDocInfo();
- echo $resultDocInfo->getModified();
- //$resultDocInfo->setTitle('thisTitle');
-  //echo $resultDocInfo->getTitle();
- echo 'hello world<br>';
-  //$fontName = $phpWord->getDefaultFontName();
-  //echo 'font name is ' . $fontName;
+ echo $resultDocInfo->getModified(); //this is getting the correct timestamp
+ 
   $count = 0;
   $count2 = 0;
  foreach ($resultSections as $section){
  	$count = $count + 1;
- 	foreach($section->getElements as $element)
+ 	foreach($section->getElements() as $element)
  	{
  		$count2 = $count2 + 1;
  	}
