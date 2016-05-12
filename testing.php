@@ -20,10 +20,10 @@
   //this is the section that would be a header file
   require_once __DIR__ . '/vendor/phpoffice/phpword/src/PhpWord/Autoloader.php'; //this is the right filepath
   date_default_timezone_set('UTC');
-  /*
+  
   use PhpOffice\PhpWord\Autoloader;
   use PhpOffice\PhpWord\Settings;
-  
+  /*
   error_reporting(E_ALL);
 define('CLI', (PHP_SAPI == 'cli') ? true : false);
 define('EOL', CLI ? PHP_EOL : '<br />');
