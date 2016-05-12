@@ -15,7 +15,7 @@
   fwrite($outputfile, $msg);
   fclose($outputfile);
   
-  echo __DIR__;
+  echo __DIR__ . '<br>';
   
   //this is the section that would be a header file
   require_once __DIR__ . '/vendor/phpoffice/phpword/src/PhpWord/Autoloader.php'; //this is the right filepath
@@ -47,7 +47,7 @@
   //this is the end of the part that would be a header file
   
   //set the name of where we are, and the name of the source file
-  $name = basename(__FILE__ .  '.php');
+  $name = basename(__FILE__,  '.php');
   $source = __DIR__ . '/uploads/HW5.docx';
  echo $name . '<br>';
  echo 'now reading contents from ' . $source;
