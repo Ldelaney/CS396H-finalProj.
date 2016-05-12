@@ -72,9 +72,8 @@
  		$count2 = $count2 + 1;
  	}
  }
- echo 'count is' . $count . '<br>';
- echo 'count2 is ' . $count2 . '<br>';
- 
+ echo 'Number of sections is' . $count . '<br>';
+ echo 'number of elements in all of those sections total is ' . $count2 . '<br>';
 ?>
 </body>
 </html>
