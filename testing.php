@@ -64,8 +64,13 @@
   //$fontName = $phpWord->getDefaultFontName();
   //echo 'font name is ' . $fontName;
   $count = 0;
+  $count2 = 0;
  foreach ($resultSections as $section){
  	$count = $count + 1;
+ 	foreach($section->getElements as $element)
+ 	{
+ 		$count2 = $count2 + 1;
+ 	}
  }
  echo 'count is' . $count . '<br>';
  
