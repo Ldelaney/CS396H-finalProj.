@@ -64,6 +64,7 @@
  	foreach($section->getElements() as $element)
  	{
  		$count2 = $count2 + 1;
+ 		echo 'My class type is ' . get_class($element);
  	}
  }
  echo 'Number of sections is' . $count . '<br>';
