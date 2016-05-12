@@ -33,6 +33,17 @@
   Settings::loadConfig();
   
   //aren't using writers
+  // Set writers
+  $writers = array('Word2007' => 'docx', 'ODText' => 'odt', 'RTF' => 'rtf', 'HTML' => 'html', 'PDF' => 'pdf');
+  // Set PDF renderer
+  if (null === Settings::getPdfRendererPath()) {
+      $writers['PDF'] = null;
+  }
+  // Return to the caller script when runs by CLI
+  if (CLI) {
+      return;
+  }
+  
   //this is the end of the part that would be a header file
   
   //set the name of where we are, and the name of the source file
@@ -43,7 +54,8 @@
   $phpWord = \PhpOffice\PhpWord\IOFactory::load($source);
 	//this should read things?
 	//the library has OK documentation and examples, but I am still confused
-
+  // Save file
+  echo write($phpWord, basename(__FILE__, '.php'), $writers);
 
 ?>
 </body>
