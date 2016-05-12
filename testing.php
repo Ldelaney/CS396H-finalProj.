@@ -59,7 +59,7 @@
   $resultSections = $phpWord->getSections();
   $fontName = $phpWord->getDefaultFontName();
   echo 'font name is ' . $fontName;
-
+  echo 'hello world';
 ?>
 </body>
 </html>
