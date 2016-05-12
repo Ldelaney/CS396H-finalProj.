@@ -56,6 +56,9 @@
 	//the library has OK documentation and examples, but I am still confused
   // Save file
   echo write($phpWord, basename(__FILE__, '.php'), $writers);
+  $resultSections = $phpWord->getSections();
+  $fontName = $phpWord->getDefaultFontName();
+  echo $fontName;
 
 ?>
 </body>
