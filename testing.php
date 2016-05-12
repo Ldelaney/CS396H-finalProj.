@@ -20,7 +20,7 @@
   //this is the section that would be a header file
   require_once __DIR__ . '/vendor/phpoffice/phpword/src/PhpWord/Autoloader.php'; //this is the right filepath
   date_default_timezone_set('UTC');
-  
+  /*
   use PhpOffice\PhpWord\Autoloader;
   use PhpOffice\PhpWord\Settings;
   
@@ -43,7 +43,7 @@ Settings::loadConfig();
 	//this should read things?
 	//the library has OK documentation and examples, but I am still confused
 
-
+*/
 ?>
 </body>
 </html>
