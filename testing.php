@@ -55,7 +55,7 @@
   // Save file
   echo 'finished reading<br>';
   //echo write($phpWord, basename(__FILE__, '.php'), $writers);
-  //$resultSections = $phpWord->getSections();
+  $resultSections = $phpWord->getSections();
  $resultDocInfo = $phpWord->getDocInfo();
  echo $resultDocInfo->getModified();
  //$resultDocInfo->setTitle('thisTitle');
@@ -63,8 +63,12 @@
  echo 'hello world<br>';
   //$fontName = $phpWord->getDefaultFontName();
   //echo 'font name is ' . $fontName;
-  //$section = $resultSections[0];
-  
+  $count = 0;
+ foreach ($resultSections as $section){
+ 	$count = $count + 1;
+ }
+ echo 'count is' . $count . '<br>';
+ 
 ?>
 </body>
 </html>
