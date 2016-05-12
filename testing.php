@@ -47,14 +47,13 @@
   //this is the end of the part that would be a header file
   
   //set the name of where we are, and the name of the source file
-  $name = basename(__FILE__,  '.php');
   $source = __DIR__ . '/uploads/HW5.docx';
- echo $name . '<br>';
  echo 'now reading contents from ' . $source;
   $phpWord = \PhpOffice\PhpWord\IOFactory::load($source);
 	//this should read things?
 	//the library has OK documentation and examples, but I am still confused
   // Save file
+  echo 'finished reading<br>';
   echo write($phpWord, basename(__FILE__, '.php'), $writers);
   $resultSections = $phpWord->getSections();
   $fontName = $phpWord->getDefaultFontName();
