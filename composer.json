@@ -1,7 +1,7 @@
 {
 	"require": {
-       "phpoffice/phpword": "v0.12.1"
-       "zendframework/zendframework": "v2.4.9"
+       "phpoffice/phpword": "v0.12.1",
+       "zendframework/zendframework": "v2.4.9",
        "zendframework/zend-diactoros": "v2.4.9"
 	}
 }
