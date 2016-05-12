@@ -49,7 +49,7 @@
   //set the name of where we are, and the name of the source file
   $name = basename(__FILE__, '.php');
   $source = __DIR__ . '/uploads/HW5.docx';
- 
+ echo $name . '<br>';
  echo 'now reading contents from ' . $source;
   $phpWord = \PhpOffice\PhpWord\IOFactory::load($source);
 	//this should read things?
