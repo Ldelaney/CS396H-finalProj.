@@ -23,8 +23,6 @@
   
   use PhpOffice\PhpWord\Autoloader;
   use PhpOffice\PhpWord\Settings;
-  //use PhpOffice\PhpWord\Element\Text;
-  //use PhpOffice\PhpWord\Element;
   
   error_reporting(E_ALL);
   define('CLI', (PHP_SAPI == 'cli') ? true : false);
@@ -71,7 +69,7 @@
  		{
  			$textElement = new PhpOffice\PhpWord\Element\Text;
  			$textElement->setText('abcd');
- 			echo 'made a text element' . '<br>';
+ 			echo 'made a text element ' . $textElement->getText() . '<br>';
  			$textElement = $element;
  			$textValue = $textelement->getText();
  			echo 'text value is ' . $textValue . '<br>';
