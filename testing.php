@@ -87,7 +87,7 @@
  						}
  						else
  						{
- 							echo 'My class type is ' . get_class($element) . '<br>';
+ 							echo 'My element type is ' . get_class($element) . '<br>';
  						}
 				}
  			}
