@@ -12,7 +12,7 @@ session_start();
   //FIXME: remove this for launch
   echo "user is " . $_SESSION["user"] . "<br>";
   echo "password is " . $_SESSION["password"]. "<br>";
-  echo "filepath is " . $_SESSION["filepath"]. "<br>";
+  echo "filepath is " . $_SESSION["filepathname"]. "<br>";
   
   //print_r($_SESSION);
   //end of things to be removed
