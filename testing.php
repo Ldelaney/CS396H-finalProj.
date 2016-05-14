@@ -71,10 +71,11 @@
  			$textElement->setText('abcd');
  			echo 'made a text element ' . $textElement->getText() . '<br>';
  			$textElement = $element;
+ 			
  			//$textValue = $textelement->getText();
  			//echo 'text value is ' . $textValue . '<br>';
  			//get the text from a text element
- 			//echo 'My text is ' . $element->get_text() . '<br>';
+ 			echo 'My text is ' . $element->getText() . '<br>';
  			echo 'I am a text object!' . '<br>';
  		}
  	}
