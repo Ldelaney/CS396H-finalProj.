@@ -70,7 +70,7 @@
   
   
   //set the name of where we are, and the name of the source file
-  $filenamepath = '\uploads\\' . 'HW5.docx';
+  $filenamepath = '\uploads\\' .$_SESSION["filepathname"];
   $source = __DIR__ . $filenamepath;
   echo 'Reading the contents of ' . $source . '<br>';
   $phpWord = \PhpOffice\PhpWord\IOFactory::load($source); //should load the file into a phpWord object
