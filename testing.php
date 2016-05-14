@@ -77,6 +77,7 @@
  			
  			if (get_class($element) == 'PhpOffice\PhpWord\Element\TextRun')
  			{
+ 				echo 'This element has ' . $element->countElements() . ' elements<br>';
  				foreach($element->getElements() as $tElement)
  				{
  						if (get_class($element) == 'PhpOffice\PhpWord\Element\Text')
