@@ -48,7 +48,7 @@
   
   function getText2($textRun)
 {
-	echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
+	//echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
    	foreach($textRun->getElements() as $el)
     	{
     		if (get_class($el) == 'PhpOffice\PhpWord\Element\Text')
@@ -75,10 +75,10 @@
   $phpWord = \PhpOffice\PhpWord\IOFactory::load($source); //should load the file into a phpWord object
 
   // Save file
- echo 'finished reading<br>';
+ echo '<br>finished reading<br>';
  $resultSections = $phpWord->getSections();
  $resultDocInfo = $phpWord->getDocInfo();
- echo $resultDocInfo->getModified(); //this is getting the correct timestamp
+ echo $resultDocInfo->getModified() . '<br>'; //this is getting the correct timestamp
  
   $count = 0;
   $count2 = 0;
@@ -96,12 +96,12 @@
  		}
  		else
  		{
- 			echo 'My class type is ' . get_class($element) . '<br>';
+ 			//echo 'My class type is ' . get_class($element) . '<br>';
  			getText2($element);
  		}
  	}
  }
- echo '<br>Number of sections is' . $count . '<br>';
+ echo '<br><br>Number of sections is' . $count . '<br>';
  echo 'number of elements in all of those sections total is ' . $count2 . '<br>';
 ?>
 </body>
