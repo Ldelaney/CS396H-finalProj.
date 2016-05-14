@@ -97,7 +97,7 @@
  		}
  		else
  		{
- 			echo '<br>';
+ 			//echo '<br>';
  			//echo 'My class type is ' . get_class($element) . '<br>';
  			getText2($element);
  		}
