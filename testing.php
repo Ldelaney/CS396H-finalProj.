@@ -54,8 +54,8 @@
     		if (get_class($el) == 'PhpOffice\PhpWord\Element\Text')
  		{
  			//get the text from a text element
- 			echo  $el->getText() . '<br>';
- 			echo  '<br>';
+ 			echo  $el->getText() . ' ';
+ 		//	echo  '<br>';
  		}
 	 	else if (get_class($el) == 'PhpOffice\PhpWord\Element\TextRun')
 		{
@@ -79,7 +79,7 @@
  echo 'finished reading<br>';
  $resultSections = $phpWord->getSections();
  $resultDocInfo = $phpWord->getDocInfo();
- //echo $resultDocInfo->getModified() . '<br>'; //this is getting the correct timestamp
+ echo $resultDocInfo->getModified() . '<br>'; //this is getting the correct timestamp
  
   $count = 0;
   $count2 = 0;
@@ -92,11 +92,12 @@
  		if (get_class($element) == 'PhpOffice\PhpWord\Element\Text')
  		{
  			//get the text from a text element
- 			echo  $element->getText() . '<br>';
- 			echo  '<br>';
+ 			echo  $element->getText() . ' ';
+ 			//echo  '<br>';
  		}
  		else
  		{
+ 			echo '<br'>;
  			//echo 'My class type is ' . get_class($element) . '<br>';
  			getText2($element);
  		}
