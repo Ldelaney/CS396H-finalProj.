@@ -16,4 +16,5 @@ session_start();
   
   //print_r($_SESSION);
   //end of things to be removed
+   header("Location: http://syllabusscheduler.azurewebsites.net/testing.php");
 ?>
