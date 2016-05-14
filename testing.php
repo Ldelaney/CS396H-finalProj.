@@ -48,26 +48,24 @@
   
   function getText2($textRun)
 {
-    foreach($textRun->getElements() as $el)
-    {
-    	if (get_class($el) == 'PhpOffice\PhpWord\Element\TextRun')
-	{
-		echo 'This element has ' . $el->countElements() . ' elements<br>';
-		foreach($el->getElements() as $tElement)
+	echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
+   	foreach($textRun->getElements() as $el)
+    	{
+    		if (get_class($element) == 'PhpOffice\PhpWord\Element\Text')
  		{
- 			if (get_class($el) == 'PhpOffice\PhpWord\Element\Text')
-			{
- 				//get the text from a text element
- 				echo  $el->getText() . '<br>';
-				echo  '<br>';
- 			}
- 			else
- 			{
-				echo 'My element type is ' . get_class($el) . '<br>';
-			}
-		}
- 	}
-    }
+ 			//get the text from a text element
+ 			echo  $element->getText() . '<br>';
+ 			echo  '<br>';
+ 		}
+	 	else if (get_class($el) == 'PhpOffice\PhpWord\Element\TextRun')
+		{
+			getText2($el);
+ 		}
+ 		else
+ 		{
+ 			echo 'This element is a ' . get_class($el) . ' not a TextRun or Text element<br>';
+ 		}
+    	}
 }
   
   
