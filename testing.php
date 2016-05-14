@@ -68,7 +68,8 @@
  		if (get_class($element) == 'PhpOffice\PhpWord\Element\Text')
  		{
  			//get the text from a text element
- 			echo 'My text is ' . $element->get_text() . '<br>';
+ 			//echo 'My text is ' . $element->get_text() . '<br>';
+ 			echo 'I am a text object!' . '<br>';
  		}
  	}
  }
