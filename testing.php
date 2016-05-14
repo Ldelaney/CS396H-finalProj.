@@ -10,12 +10,12 @@
 
 <?php
 	
-  $outputfile = fopen("testfile.txt", "w");
-  $msg = "This is a line of test output";
-  fwrite($outputfile, $msg);
-  fclose($outputfile);
+ // $outputfile = fopen("testfile.txt", "w");
+  //$msg = "This is a line of test output";
+  //fwrite($outputfile, $msg);
+  //fclose($outputfile);
   
-  echo __DIR__ . '<br>';
+  //echo __DIR__ . '<br>';
   
   //this is the section that would be a header file
   require_once __DIR__ . '/vendor/phpoffice/phpword/src/PhpWord/Autoloader.php'; //this is the right filepath
@@ -70,15 +70,16 @@
   
   
   //set the name of where we are, and the name of the source file
-  $source = __DIR__ . '\uploads\HW5.docx';
-  echo 'now reading contents from ' . $source;
+  $filenamepath = '\uploads\\' . 'HW5.docx';
+  $source = __DIR__ . $filenamepath;
+  echo 'Reading the contents of ' . $source . '<br>';
   $phpWord = \PhpOffice\PhpWord\IOFactory::load($source); //should load the file into a phpWord object
 
   // Save file
- echo '<br>finished reading<br>';
+ echo 'finished reading<br>';
  $resultSections = $phpWord->getSections();
  $resultDocInfo = $phpWord->getDocInfo();
- echo $resultDocInfo->getModified() . '<br>'; //this is getting the correct timestamp
+ //echo $resultDocInfo->getModified() . '<br>'; //this is getting the correct timestamp
  
   $count = 0;
   $count2 = 0;
