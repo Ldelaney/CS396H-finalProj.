@@ -74,10 +74,27 @@
  		else
  		{
  			echo 'My class type is ' . get_class($element) . '<br>';
+ 			
+ 			if (get_class($element) == 'PhpOffice\PhpWord\Element\TextRun')
+ 			{
+ 				foreach($element->getElements() as $tElement)
+ 				{
+ 						if (get_class($element) == 'PhpOffice\PhpWord\Element\Text')
+ 						{
+ 							//get the text from a text element
+ 							echo  $element->getText() . '<br>';
+ 							echo  '<br>';
+ 						}
+ 						else
+ 						{
+ 							echo 'My class type is ' . get_class($element) . '<br>';
+ 						}
+				}
+ 			}
  		}
  	}
  }
- echo 'Number of sections is' . $count . '<br>';
+ echo '<br>Number of sections is' . $count . '<br>';
  echo 'number of elements in all of those sections total is ' . $count2 . '<br>';
 ?>
 </body>
