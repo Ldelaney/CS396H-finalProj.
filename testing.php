@@ -51,10 +51,10 @@
 	echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
    	foreach($textRun->getElements() as $el)
     	{
-    		if (get_class($element) == 'PhpOffice\PhpWord\Element\Text')
+    		if (get_class($el) == 'PhpOffice\PhpWord\Element\Text')
  		{
  			//get the text from a text element
- 			echo  $element->getText() . '<br>';
+ 			echo  $el->getText() . '<br>';
  			echo  '<br>';
  		}
 	 	else if (get_class($el) == 'PhpOffice\PhpWord\Element\TextRun')
