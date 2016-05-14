@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <body>
@@ -11,6 +16,7 @@
 
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$_SESSION["filepathname"] = basename($_FILES["fileToUpload"]["name"]); //will use this in the results/testing php pages
 $uploadOk = 1;
 $fileType = pathinfo($target_file,PATHINFO_EXTENSION);
 //check if the file already exists
@@ -35,7 +41,6 @@ if ($uploadOk == 0) {
 } else { 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded."."<br>";
-        $_SESSION["filepath"]=$target_file;
         $choseACalendar = false;
         if ($_POST["googlecal"]){
             $_SESSION["googlecal"] = $_POST["googlecal"]; //will be a string of "true" if set
