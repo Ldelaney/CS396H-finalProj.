@@ -46,6 +46,31 @@
   
   //this is the end of the part that would be a header file
   
+  function getText2($textRun)
+{
+    foreach($textRun->getElements() as $el)
+    {
+    	if (get_class($el) == 'PhpOffice\PhpWord\Element\TextRun')
+	{
+		echo 'This element has ' . $el->countElements() . ' elements<br>';
+		foreach($el->getElements() as $tElement)
+ 		{
+ 			if (get_class($el) == 'PhpOffice\PhpWord\Element\Text')
+			{
+ 				//get the text from a text element
+ 				echo  $el->getText() . '<br>';
+				echo  '<br>';
+ 			}
+ 			else
+ 			{
+				echo 'My element type is ' . get_class($el) . '<br>';
+			}
+		}
+ 	}
+    }
+}
+  
+  
   //set the name of where we are, and the name of the source file
   $source = __DIR__ . '\uploads\HW5.docx';
   echo 'now reading contents from ' . $source;
@@ -74,24 +99,7 @@
  		else
  		{
  			echo 'My class type is ' . get_class($element) . '<br>';
- 			
- 			if (get_class($element) == 'PhpOffice\PhpWord\Element\TextRun')
- 			{
- 				echo 'This element has ' . $element->countElements() . ' elements<br>';
- 				foreach($element->getElements() as $tElement)
- 				{
- 						if (get_class($element) == 'PhpOffice\PhpWord\Element\Text')
- 						{
- 							//get the text from a text element
- 							echo  $element->getText() . '<br>';
- 							echo  '<br>';
- 						}
- 						else
- 						{
- 							echo 'My element type is ' . get_class($element) . '<br>';
- 						}
-				}
- 			}
+ 			getText2($element);
  		}
  	}
  }
