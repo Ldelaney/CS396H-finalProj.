@@ -69,7 +69,7 @@
  		echo 'My class type is ' . get_class($element) . '<br>';
  		if (get_class($element) == 'PhpOffice\PhpWord\Element\Text')
  		{
- 			$textElement = new PhpOffice\PhpWord\Element\Text();
+ 			$textElement = new PhpOffice\PhpWord\Element\Text;
  			$textElement->set_text('abcd');
  			echo 'made a text element' . '<br>';
  			$textElement = $element;
