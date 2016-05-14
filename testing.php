@@ -65,7 +65,7 @@
  	{
  		$count2 = $count2 + 1;
  		echo 'My class type is ' . get_class($element) . '<br>';
- 		if (get_class($element) == "PhpOffice\PhpWord\Element\Text")
+ 		if (get_class($element) == 'PhpOffice\PhpWord\Element\Text')
  		{
  			//get the text from a text element
  			echo 'My text is ' . $element->get_text() . '<br>';
