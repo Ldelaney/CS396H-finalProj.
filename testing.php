@@ -23,8 +23,8 @@
   
   use PhpOffice\PhpWord\Autoloader;
   use PhpOffice\PhpWord\Settings;
-  use PhpOffice\PhpWord\Element\Text;
-  use PhpOffice\PhpWord\Element;
+  //use PhpOffice\PhpWord\Element\Text;
+  //use PhpOffice\PhpWord\Element;
   
   error_reporting(E_ALL);
   define('CLI', (PHP_SAPI == 'cli') ? true : false);
@@ -70,10 +70,10 @@
  		if (get_class($element) == 'PhpOffice\PhpWord\Element\Text')
  		{
  			$textElement = new PhpOffice\PhpWord\Element\Text;
- 			$textElement->set_text('abcd');
+ 			$textElement->setText('abcd');
  			echo 'made a text element' . '<br>';
  			$textElement = $element;
- 			$textValue = $textelement->get_text();
+ 			$textValue = $textelement->getText();
  			echo 'text value is ' . $textValue . '<br>';
  			//get the text from a text element
  			//echo 'My text is ' . $element->get_text() . '<br>';
