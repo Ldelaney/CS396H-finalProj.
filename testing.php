@@ -48,6 +48,7 @@
   
   function getText2($textRun)
 {
+	echo '<br>';
 	//echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
    	foreach($textRun->getElements() as $el)
     	{
