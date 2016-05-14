@@ -23,6 +23,8 @@
   
   use PhpOffice\PhpWord\Autoloader;
   use PhpOffice\PhpWord\Settings;
+  use PhpOffice\PhpWord\Element\Text;
+  use PhpOffice\PhpWord\Element;
   
   error_reporting(E_ALL);
   define('CLI', (PHP_SAPI == 'cli') ? true : false);
