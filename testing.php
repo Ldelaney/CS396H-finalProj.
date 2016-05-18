@@ -67,7 +67,7 @@
  			echo 'This element is a ' . get_class($el) . ' not a TextRun or Text element<br>';
  		}
     	}
-    	echo 'Leaving function getText2<br>';
+    	//echo 'Leaving function getText2<br>';
 }
   
   
@@ -103,6 +103,7 @@
  			//echo 'My class type is ' . get_class($element) . '<br>';
  			getText2($element);
  		}
+ 		echo 'Finished reading this element<br>';
  	}
  	echo 'Finished reading this section<br>';
  }
