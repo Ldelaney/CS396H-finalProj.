@@ -67,6 +67,7 @@
  			echo 'This element is a ' . get_class($el) . ' not a TextRun or Text element<br>';
  		}
     	}
+    	echo 'Leaving function getText2<br>';
 }
   
   
@@ -103,6 +104,7 @@
  			getText2($element);
  		}
  	}
+ 	echo 'Finished reading this section<br>';
  }
  echo '<br><br>Number of sections is' . $count . '<br>';
  echo 'number of elements in all of those sections total is ' . $count2 . '<br>';
