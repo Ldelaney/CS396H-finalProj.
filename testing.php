@@ -71,6 +71,14 @@
  			}
 	  	}
 	}
+	else if (get_class($textRun) == 'PhpOffice\PhpWord\Element\TextBreak')
+	{
+		echo '<br><br>';
+	}
+	else if (get_class($textRun) == 'PhpOffice\PhpWord\Element\ListItem')
+	{
+		echo '..list item value..<br>'; //FIXME
+	}
 	else
 	{
 			echo '<br>This element is a ' . get_class($textRun) . ' not a TextRun element<br>';
