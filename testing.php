@@ -65,9 +65,13 @@
 			{
 				getText2($el);
  			}
+	 		else if (get_class($el) == 'PhpOffice\PhpWord\Element\TextBreak')
+			{
+				echo '<br><br>';
+			}
  			else
  			{
- 				echo 'This element is a ' . get_class($el) . ' not a TextRun or Text element<br>';
+ 				echo '!!!!! This element is a ' . get_class($el) . ' not a TextRun or Text element!!!!!<br>';
  			}
 	  	}
 	}
@@ -81,7 +85,7 @@
 	}
 	else
 	{
-			echo '<br>This element is a ' . get_class($textRun) . ' not a TextRun element<br>';
+			echo '<br>!!!!!This element is a ' . get_class($textRun) . ' not a TextRun element!!!!!<br>';
 	}
     	//echo 'Leaving function getText2<br>';
 }
@@ -132,7 +136,7 @@
 	echo '<br><br>Number of sections read is' . $count . '<br>';
 	echo 'number of elements read in all of those sections total is ' . $count2 . '<br>';
 
- echo 'we have been unable to reach this line<br>';
+	echo '<br>Done writing to page<br>';
 
  
 ?>
