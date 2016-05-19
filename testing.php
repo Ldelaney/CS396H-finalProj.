@@ -87,8 +87,10 @@
   $count2 = 0;
  foreach ($phpWord->getSections() as $thisSection){//($resultSections as $section){
  	$count = $count + 1;
+ 	echo 'number of sections = ' . count($phpWord->getSections()). '<br>';
  	foreach($thisSection->getElements() as $thisElement)
  	{
+ 		echo 'number of elements = ' . count($thisSection->getElements()) . ' or recursively ' . count($thisSection->getElements(), COUNT_RECURSIVE) . '<br>';
  		$count2 = $count2 + 1;
  		
  		if (get_class($thisElement) == 'PhpOffice\PhpWord\Element\Text')
