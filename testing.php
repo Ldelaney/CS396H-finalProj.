@@ -49,7 +49,7 @@
   
   function getText2($textRun)
 {
-	if (get_class($el) == 'PhpOffice\PhpWord\Element\TextRun')
+	if (get_class($textRun) == 'PhpOffice\PhpWord\Element\TextRun')
 	{
 		//echo '<br>';
 		//echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
@@ -73,7 +73,7 @@
 	}
 	else
 	{
-			echo '<br>This element is a ' . get_class($el) . ' not a TextRun or Text element<br>';
+			echo '<br>This element is a ' . get_class($textRun) . ' not a TextRun element<br>';
 	}
     	//echo 'Leaving function getText2<br>';
 }
