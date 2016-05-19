@@ -49,7 +49,7 @@
   function getText2($textRun)
 {
 	echo '<br>';
-	echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
+	//echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
    	foreach($textRun->getElements() as $el)
     	{
     		if (get_class($el) == 'PhpOffice\PhpWord\Element\Text')
@@ -105,7 +105,7 @@
  			getText2($element);
  			echo '<br>finished a call to getText2<br>';
  		}
- 		echo 'Finished reading this element<br>';
+ 		echo 'Finished reading element ' . $count2 .'<br>';
  	}
  	echo 'Finished reading this section<br>';
  }
