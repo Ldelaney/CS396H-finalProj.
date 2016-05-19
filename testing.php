@@ -96,17 +96,20 @@
  			//get the text from a text element
  			echo  $element->getText() . ' ';
  			//echo  '<br>';
+ 			echo '<br>finished reading a text element<br>';
  		}
  		else
  		{
  			//echo '<br>';
  			//echo 'My class type is ' . get_class($element) . '<br>';
  			getText2($element);
+ 			echo '<br>finished a call to getText2<br>';
  		}
  		echo 'Finished reading this element<br>';
  	}
  	echo 'Finished reading this section<br>';
  }
+ echo 'we have been unable to reach this line<br>';
  echo '<br><br>Number of sections is' . $count . '<br>';
  echo 'number of elements in all of those sections total is ' . $count2 . '<br>';
 ?>
