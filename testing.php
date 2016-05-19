@@ -85,7 +85,7 @@
  
   $count = 0;
   $count2 = 0;
- foreach ($resultSections as $section){
+ foreach ($phpWord->getSections() as $section){//($resultSections as $section){
  	$count = $count + 1;
  	foreach($section->getElements() as $element)
  	{
