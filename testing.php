@@ -95,11 +95,10 @@
  	{
  		
  		$count2 = $count2 + 1;
- 		
  		if (get_class($thisElement) == 'PhpOffice\PhpWord\Element\Text')
  		{
  			//get the text from a text element
- 			echo  $$thisElement->getText() . ' ';
+ 			echo  $thisElement->getText() . ' ';
  			//echo  '<br>';
  			//echo '<br>finished reading a text element<br>';
  		}
