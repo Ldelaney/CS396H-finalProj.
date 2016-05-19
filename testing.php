@@ -69,8 +69,6 @@
     	}
     	//echo 'Leaving function getText2<br>';
 }
-  
-  	  try{ //START TRY
   	  	
   //set the name of where we are, and the name of the source file
   $filenamepath = '\uploads\\' .$_SESSION["filepathname"];
@@ -116,16 +114,9 @@
 	 
  	echo 'Finished reading this section<br>';
  }
-  
-  
- } catch(Exception $e) //END TRY
-  	{
-  		echo 'Caught exception: ' .  $e->getMessage() . '<br>';
-	 }
-	 finally{
-	  	echo '<br><br>Number of sections read is' . $count . '<br>';
-		 echo 'number of elements read in all of those sections total is ' . $count2 . '<br>';
-	 }
+	echo '<br><br>Number of sections read is' . $count . '<br>';
+	echo 'number of elements read in all of those sections total is ' . $count2 . '<br>';
+
  echo 'we have been unable to reach this line<br>';
 
  
