@@ -5,6 +5,12 @@ session_start();
 
 <!DOCTYPE html>
 <html>
+    <head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>
+		Laura and Noel Pitch a Project
+	</title>
+</head>
 <body>
 
 
