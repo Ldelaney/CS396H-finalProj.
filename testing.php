@@ -105,7 +105,7 @@
  			getText2($thisElement);
  			//echo '<br>finished a call to getText2<br>';
  		}
- 		echo 'Finished reading element ' . $count2 .'<br>';
+ 		echo '<br>Finished reading element ' . $count2 .'<br>';
  	}
  	echo 'Finished reading this section<br>';
  }
