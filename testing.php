@@ -48,8 +48,8 @@
   
   function getText2($textRun)
 {
-	echo '<br>';
-	echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
+	//echo '<br>';
+	//echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
    	foreach($textRun->getElements() as $el)
     	{
     		if (get_class($el) == 'PhpOffice\PhpWord\Element\Text')
@@ -85,12 +85,13 @@
  
   $count = 0;
   $count2 = 0;
+  echo 'number of sections = ' . count($phpWord->getSections()). '<br>';
  foreach ($phpWord->getSections() as $thisSection){//($resultSections as $section){
  	$count = $count + 1;
- 	echo 'number of sections = ' . count($phpWord->getSections()). '<br>';
+ 	echo 'number of elements = ' . count($thisSection->getElements()) . ' or recursively ' . count($thisSection->getElements(), COUNT_RECURSIVE) . '<br>';
  	foreach($thisSection->getElements() as $thisElement)
  	{
- 		echo 'number of elements = ' . count($thisSection->getElements()) . ' or recursively ' . count($thisSection->getElements(), COUNT_RECURSIVE) . '<br>';
+ 		
  		$count2 = $count2 + 1;
  		
  		if (get_class($thisElement) == 'PhpOffice\PhpWord\Element\Text')
