@@ -49,25 +49,32 @@
   
   function getText2($textRun)
 {
-	//echo '<br>';
-	//echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
-   	foreach($textRun->getElements() as $el)
-    	{
-    		if (get_class($el) == 'PhpOffice\PhpWord\Element\Text')
- 		{
- 			//get the text from a text element
- 			echo  $el->getText() . ' ';
- 		//	echo  '<br>';
- 		}
-	 	else if (get_class($el) == 'PhpOffice\PhpWord\Element\TextRun')
-		{
-			getText2($el);
- 		}
- 		else
- 		{
- 			echo 'This element is a ' . get_class($el) . ' not a TextRun or Text element<br>';
- 		}
-    	}
+	if (get_class($el) == 'PhpOffice\PhpWord\Element\TextRun')
+	{
+		//echo '<br>';
+		//echo 'This ' . get_class($textRun) . ' element has ' . $textRun->countElements() . ' elements<br>';
+   		foreach($textRun->getElements() as $el)
+    		{
+    			if (get_class($el) == 'PhpOffice\PhpWord\Element\Text')
+ 			{
+ 				//get the text from a text element
+ 				echo  $el->getText() . ' ';
+ 			//	echo  '<br>';
+ 			}
+		 	else if (get_class($el) == 'PhpOffice\PhpWord\Element\TextRun')
+			{
+				getText2($el);
+ 			}
+ 			else
+ 			{
+ 				echo 'This element is a ' . get_class($el) . ' not a TextRun or Text element<br>';
+ 			}
+	  	}
+	}
+	else
+	{
+			echo '<br>This element is a ' . get_class($el) . ' not a TextRun or Text element<br>';
+	}
     	//echo 'Leaving function getText2<br>';
 }
   	  	
