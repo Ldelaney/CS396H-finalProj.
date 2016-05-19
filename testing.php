@@ -85,16 +85,16 @@
  
   $count = 0;
   $count2 = 0;
- foreach ($phpWord->getSections() as $section){//($resultSections as $section){
+ foreach ($phpWord->getSections() as $thisSection){//($resultSections as $section){
  	$count = $count + 1;
- 	foreach($section->getElements() as $element)
+ 	foreach($thisSection->getElements() as $thisElement)
  	{
  		$count2 = $count2 + 1;
  		
- 		if (get_class($element) == 'PhpOffice\PhpWord\Element\Text')
+ 		if (get_class($thisElement) == 'PhpOffice\PhpWord\Element\Text')
  		{
  			//get the text from a text element
- 			echo  $element->getText() . ' ';
+ 			echo  $$thisElement->getText() . ' ';
  			//echo  '<br>';
  			echo '<br>finished reading a text element<br>';
  		}
@@ -102,7 +102,7 @@
  		{
  			//echo '<br>';
  			//echo 'My class type is ' . get_class($element) . '<br>';
- 			getText2($element);
+ 			getText2($thisElement);
  			echo '<br>finished a call to getText2<br>';
  		}
  		echo 'Finished reading element ' . $count2 .'<br>';
