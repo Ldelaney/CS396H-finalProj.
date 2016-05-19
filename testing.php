@@ -2,6 +2,7 @@
 // Start the user session
 //for REFERENCE/info about how sessions work, go here: http://www.w3schools.com/php/php_sessions.asp
 	session_start();
+	ini_set("display_errors", 1); 
 ?>
 
 <!DOCTYPE html>
