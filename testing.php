@@ -86,10 +86,11 @@
   $count = 0;
   $count2 = 0;
   echo 'number of sections = ' . count($phpWord->getSections()). '<br>';
-  try{
+
  foreach ($phpWord->getSections() as $thisSection){//($resultSections as $section){
  	$count = $count + 1;
  	echo 'number of elements = ' . count($thisSection->getElements()) . ' or recursively ' . count($thisSection->getElements(), COUNT_RECURSIVE) . '<br>';
+ 	  try{
  	foreach($thisSection->getElements() as $thisElement)
  	{
  		
@@ -111,12 +112,13 @@
  		}
  	//	echo '<br>Finished reading element ' . $count2 .'<br>';
  	}
+	 } catch(Exception $e)
+  	{
+  		echo 'Caught exception: ' .  $e->getMessage() . '<br>';
+	 }
  	echo 'Finished reading this section<br>';
  }
-  } catch(Exception $e)
-  {
-  	echo 'Caught exception: ' .  $e->getMessage() . '<br>';
-  }
+  
  echo 'we have been unable to reach this line<br>';
  echo '<br><br>Number of sections is' . $count . '<br>';
  echo 'number of elements in all of those sections total is ' . $count2 . '<br>';
